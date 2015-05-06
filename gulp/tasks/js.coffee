@@ -1,7 +1,7 @@
 gulp = require 'gulp'
-config = require('../config').js
+config = require '../config'
 
 gulp.task 'js', ->
-  gulp
-    .src config.src
-    .pipe gulp.dest(config.dest)
+    gulp
+    .src config.js.src
+    .pipe gulp.dest(config.js.dest)

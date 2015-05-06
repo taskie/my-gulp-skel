@@ -1,9 +1,7 @@
 gulp = require 'gulp'
 runSequence = require 'run-sequence'
+config = require '../config'
 
 gulp.task 'default', (cb) ->
-  runSequence(
-    ['js', 'ts', 'coffee', 'styl', 'data'],
-    'webpack',
-    cb
-  )
+    sequence = config.default.sequence.concat([cb])
+    runSequence(sequence...)

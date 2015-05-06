@@ -1,7 +1,7 @@
 gulp = require 'gulp'
-config = require('../config').data
+config = require '../config'
 
 gulp.task 'data', ->
-  gulp
-    .src config.src
-    .pipe gulp.dest(config.dest)
+    gulp
+    .src config.data.src
+    .pipe gulp.dest(config.data.dest)

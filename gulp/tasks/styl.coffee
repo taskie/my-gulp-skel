@@ -6,16 +6,16 @@ concat = require 'gulp-concat'
 autoprefixer = require 'gulp-autoprefixer'
 minify = require 'gulp-minify-css'
 sourcemaps = require 'gulp-sourcemaps'
-config = require('../config').styl
+config = require '../config'
 
 gulp.task 'styl', ->
-  gulp
-    .src config.src
+    gulp
+    .src config.styl.src
     .pipe plumber()
     .pipe sourcemaps.init()
     .pipe stylus()
-    .pipe concat(config.output)
-    .pipe autoprefixer(config.autoprefixer)
-    .pipe gulpif(config.minify, minify())
+    .pipe concat(config.styl.output)
+    .pipe autoprefixer(config.styl.autoprefixer)
+    .pipe gulpif(config.styl.minify, minify())
     .pipe sourcemaps.write('.')
-    .pipe gulp.dest(config.dest)
+    .pipe gulp.dest(config.styl.dest)

@@ -1,11 +1,11 @@
 gulp = require 'gulp'
 webpack = require 'gulp-webpack'
 plumber = require 'gulp-plumber'
-config = require('../config').webpack
+config = require '../config'
 
 gulp.task 'webpack', ->
-  gulp
-    .src config.webpack.entry
+    gulp
+    .src config.webpack.src
     .pipe plumber()
-    .pipe webpack(config.webpack)
-    .pipe gulp.dest(config.dest)
+    .pipe webpack(config.webpack.options)
+    .pipe gulp.dest(config.webpack.dest)

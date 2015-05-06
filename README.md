@@ -1,6 +1,6 @@
 # my-gulp-skel
 
-My skelton for gulp, webpack, CoffeeScript, TypeScript, Stylus, etc.
+My skelton for gulp, webpack, CoffeeScript, TypeScript, Babel, Jade, Stylus, etc.
 
 ## Directory Configuration 
 
@@ -9,8 +9,10 @@ My skelton for gulp, webpack, CoffeeScript, TypeScript, Stylus, etc.
     - *.js, *.ts, *.coffee
   + css/
     - *.css, *.styl
+  + html/
+	- *.html, *.jade
   + data/
-    - *.html, *.png, etc.
+    - *.png, *.jpg, *.ttf, etc.
 * gulp/
   + config.coffee
     - user settings
@@ -20,6 +22,10 @@ My skelton for gulp, webpack, CoffeeScript, TypeScript, Stylus, etc.
   + production files
 
 ## Usage
+
+```
+$ npm update -D
+```
 
 ```
 $ gulp
