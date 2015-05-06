@@ -4,6 +4,8 @@ tmp = './tmp/'
 
 webpack = require 'webpack'
 
+NDEBUG = false
+
 config =
     dest: dest
 
@@ -78,6 +80,12 @@ config =
                 ['js', 'coffee', 'ts', 'html', 'jade', 'styl', 'data']
                 ['webpack']
             ]
+
+# release mode
+if NDEBUG
+    config.jade.options.pretty = false
+    config.styl.minify = true
+    config.webpack.options.plugins.push(new webpack.optimize.UglifyJsPlugin())
 
 config.watch = {}
 for keys in config.default.sequence
