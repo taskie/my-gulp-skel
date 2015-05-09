@@ -6,9 +6,9 @@ config = require '../config'
 
 gulp.task 'coffee', ->
     gulp
-    .src config.coffee.src
-    .pipe plumber()
-    .pipe sourcemaps.init()
-    .pipe coffee()
-    .pipe sourcemaps.write('.')
-    .pipe gulp.dest(config.coffee.dest)
+        .src config.coffee.src
+        .pipe plumber()
+        .pipe sourcemaps.init()
+        .pipe coffee()
+        .pipe sourcemaps.write('.')
+        .pipe gulp.dest(config.coffee.dest)

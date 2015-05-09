@@ -3,5 +3,5 @@ config = require '../config'
 
 gulp.task 'html', ->
     gulp
-    .src config.html.src
-    .pipe gulp.dest(config.html.dest)
+        .src config.html.src
+        .pipe gulp.dest(config.html.dest)

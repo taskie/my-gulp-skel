@@ -10,12 +10,12 @@ config = require '../config'
 
 gulp.task 'styl', ->
     gulp
-    .src config.styl.src
-    .pipe plumber()
-    .pipe sourcemaps.init()
-    .pipe stylus()
-    .pipe concat(config.styl.output)
-    .pipe autoprefixer(config.styl.autoprefixer)
-    .pipe gulpif(config.styl.minify, minify())
-    .pipe sourcemaps.write('.')
-    .pipe gulp.dest(config.styl.dest)
+        .src config.styl.src
+        .pipe plumber()
+        .pipe sourcemaps.init()
+        .pipe stylus()
+        .pipe concat(config.styl.output)
+        .pipe autoprefixer(config.styl.autoprefixer)
+        .pipe gulpif(config.styl.minify, minify())
+        .pipe sourcemaps.write('.')
+        .pipe gulp.dest(config.styl.dest)

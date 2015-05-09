@@ -74,11 +74,18 @@ config =
     clobber:
         src: [tmp, dest]
 
+    webserver:
+        src: dest
+        livereload: true
+        directoryListing: true
+        open: true
+
     default:
         sequence:
             [
                 ['js', 'coffee', 'ts', 'html', 'jade', 'styl', 'data']
                 ['webpack']
+                ['webserver']
             ]
 
 # release mode
@@ -90,6 +97,7 @@ if NDEBUG
 config.watch = {}
 for keys in config.default.sequence
     for key in keys
+        continue if key == 'webserver'
         config.watch[key] = config[key].src
 
 module.exports = config

@@ -5,7 +5,7 @@ config = require '../config'
 
 gulp.task 'webpack', ->
     gulp
-    .src config.webpack.src
-    .pipe plumber()
-    .pipe webpack(config.webpack.options)
-    .pipe gulp.dest(config.webpack.dest)
+        .src config.webpack.src
+        .pipe plumber()
+        .pipe webpack(config.webpack.options)
+        .pipe gulp.dest(config.webpack.dest)
